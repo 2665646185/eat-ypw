@@ -194,7 +194,7 @@ function gameOver() {
 function gameTime() {
     _gameTimeNum--;
     if (_gameTimeNum <= 0) {
-        GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;时间到！';
+        GameTimeLayer.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;蚌埠住了！';
         gameOver();
         GameLayerBG.className += ' flash';
         createjs.Sound.play("end");
@@ -204,7 +204,7 @@ function gameTime() {
 }
 
 function creatTimeText(n) {
-    return '&nbsp;剩余时间:' + n;
+    return '&nbsp;剩余爆菊时间:' + n;
 }
 
 let _ttreg = / t{1,2}(\d+)/,
@@ -441,7 +441,7 @@ function showGameScoreLayer() {
     let score_text = '您坚持了 ';
     score_text += "<span style='color:red;'>" + (deviation_time / 1000).toFixed(2) + "</span>" + ' 秒哦！<br>您的得分为 ';
     score_text += "<span style='color:red;'>" + _gameScore + "</span>";
-    score_text += '<br>您平均每秒杀死 ';
+    score_text += '<br>您平均每秒爆菊 ';
     score_text += "<span style='color:red;'>" + (_gameScore * 1000 / deviation_time).toFixed(2);
     score_text += "</span>" + ' 个皮子！';
     document.getElementById('GameScoreLayer-score').innerHTML = score_text;
@@ -451,7 +451,7 @@ function showGameScoreLayer() {
         cookie('bast-score', bast, 100);
     }
 
-    document.getElementById('GameScoreLayer-bast').innerHTML = '历史最佳得分 ' + "<span style='color:red;'>" + bast + "</span>";
+    document.getElementById('GameScoreLayer-bast').innerHTML = '最高爆了 ' + "<span style='color:red;'>" + bast + "</span>";
     let now = '您的自定义键型为：' + "<span style='color:red;'>" + key.join('')
         + "</span>";
     document.getElementById('now').innerHTML = now;
@@ -477,11 +477,11 @@ function backBtn() {
 function shareText(score) {
 
     deviation_time = (date2.getTime() - _date1.getTime())
-    if (score <= 2.5 * __Time) return '✓都比你点的快';
+    if (score <= 2.5 * __Time) return '✓都比你爆的快';
     if (score <= 5 * __Time) return '^_^ 皮子毫无波澜甚至感觉像洗荤脚';
-    if (score <= 7.5 * __Time) return '皮子谢谢你';
-    if (score <= 10 * __Time) return '皮子:您？';
-    return '皮子:爬！';
+    if (score <= 7.5 * __Time) return '皮子感觉到疼了';
+    if (score <= 10 * __Time) return '皮子疼死了';
+    return '皮子诶嘿颜了';
 }
 
 function toStr(obj) {
